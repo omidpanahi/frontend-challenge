@@ -3,14 +3,19 @@
   "version": "1.0.0",
   "description": "Sheypoor frontend challenge",
   "dependencies": {
-    "sdk": "file:sdk",
+    "@chakra-ui/react": "^1.6.5",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "framer-motion": "^4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "typescript": "^4.1.2",
+    "sdk": "file:sdk",
+    "typescript": "^4.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.1.8"
   }
 }
