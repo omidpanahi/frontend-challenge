@@ -1,4 +1,4 @@
-import { Box, Button, Flex, HStack, Link, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Link, Stack } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom"
 import { useAuthState } from "../../stores/auth/AuthProvider";
 import Profile from "../Profile/Profile";
