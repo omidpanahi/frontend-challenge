@@ -1,8 +1,11 @@
-import { Box, Button, Flex, Link, Stack } from "@chakra-ui/react";
-import {Link as RouterLink} from "react-router-dom"
+import { Box, Button, Flex, HStack, Link, Stack, Text } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom"
+import { useAuthState } from "../../stores/auth/AuthProvider";
+import Profile from "../Profile/Profile";
 import Wrapper from "../Wrapper/Wrapper";
 
 const Header = () => {
+    const authState = useAuthState()
     return (
         <Flex align="center" bg="blue.500" color="white" height={50} position="sticky" top={0}>
             <Wrapper>
@@ -14,9 +17,12 @@ const Header = () => {
                         Dashboard
                     </Link>
                     <Box marginInlineStart="auto !important">
-                        <RouterLink to="/signup">
-                            <Button size="sm" colorScheme="whiteAlpha">Sign Up</Button>
-                        </RouterLink>
+                        {authState.loggedIn ?
+                            <Profile />
+                            : <RouterLink to="/signup">
+                                <Button size="sm" colorScheme="whiteAlpha">Sign Up</Button>
+                            </RouterLink>}
+
                     </Box>
                 </Stack>
             </Wrapper>

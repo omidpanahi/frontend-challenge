@@ -40,7 +40,7 @@ const SignUpStepOne = ({ initialValue, onSubmit }: IProps) => {
                     <VStack spacing={8}>
                         <Field name="name" validate={validateName}>
                             {({ field, form }: FieldAttributes<any>) => (
-                                <FormControl isInvalid={form.errors.name && form.touched.name} isRequired>
+                                <FormControl isInvalid={form.errors.name && form.touched.name}>
                                     <FormLabel htmlFor="name">Name</FormLabel>
                                     <Input {...field} id="name" placeholder="name" />
                                     <FormErrorMessage>{form.errors.name}</FormErrorMessage>
@@ -49,7 +49,7 @@ const SignUpStepOne = ({ initialValue, onSubmit }: IProps) => {
                         </Field>
                         <Field name="age" validate={validateAge}>
                             {({ field, form }: FieldAttributes<any>) => (
-                                <FormControl isInvalid={form.errors.age && form.touched.age} isRequired>
+                                <FormControl isInvalid={form.errors.age && form.touched.age}>
                                     <FormLabel htmlFor="age">Age</FormLabel>
                                     <NumberInput {...field} onChange={(val) =>
                                         form.setFieldValue(field.name, val)
@@ -64,7 +64,7 @@ const SignUpStepOne = ({ initialValue, onSubmit }: IProps) => {
                                 </FormControl>)}
                         </Field>
                         <HStack spacing={8} justifyContent="flex-end" width="100%">
-                            <Button colorScheme="blue" isLoading={props.isSubmitting}
+                            <Button colorScheme="blue" isLoading={props.isSubmitting} disabled={!props.isValid}
                                 type="submit">Next</Button>
                         </HStack>
                     </VStack>

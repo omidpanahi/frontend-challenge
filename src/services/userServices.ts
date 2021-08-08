@@ -1,8 +1,10 @@
 // @ts-ignore
 import { createUser } from "sdk";
-import { IAccount } from "../models/Account";
 import { IUser } from "../models/User";
-
-export function signUp(user: IUser): IAccount {
+export interface ISignupResponse {
+  user: IUser;
+  token: string;
+}
+export function signUp(user: IUser): Promise<ISignupResponse> {
   return createUser(user);
 }
